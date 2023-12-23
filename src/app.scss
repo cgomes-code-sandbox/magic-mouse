@@ -1,0 +1,20 @@
+body {
+  width: 100svw;
+  height: 100svh;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#App {
+  width: 90%;
+  min-height: 30%;
+
+  background-color: rgb(70, 12, 67);
+  border-radius: 1rem;
+  color: white;
+
+  overflow: hidden;
+  position: absolute;
+}

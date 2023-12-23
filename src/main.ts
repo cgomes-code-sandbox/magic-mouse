@@ -1,0 +1,1 @@
+const maxStack = 10;
