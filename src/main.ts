@@ -32,8 +32,23 @@
     return star;
   }
 
+  function createBlurStep(x: number, y: number) {
+    const step = document.createElement('span');
+    step.classList.add('blur-shadow');
+    step.style.left = `${x}px`;
+    step.style.top = `${y}px`;
+    return step;
+  }
+
   function handleMove(e: MouseEvent) {
     const { offsetX: x, offsetY: y } = e;
+
+    const shadow = createBlurStep(x, y);
+    appDiv.appendChild(shadow);
+
+    setTimeout(() => {
+      shadow.remove();
+    }, 75);
 
     if (calculateDistance(x, y, lastAdded.x, lastAdded.y) < distance) {
       return;
@@ -44,12 +59,10 @@
     const star = createStar(x, y);
     appDiv.appendChild(star);
 
-    // setTimeout(() => {
-    //   star.remove();
-    // }, 1500);
+    setTimeout(() => {
+      star.remove();
+    }, 1100);
   }
 
-  appDiv.addEventListener('mousemove', (e) => {
-    requestAnimationFrame(() => handleMove(e));
-  });
+  appDiv.addEventListener('mousemove', handleMove);
 })();

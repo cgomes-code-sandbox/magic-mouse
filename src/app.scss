@@ -28,6 +28,14 @@ body {
   animation-fill-mode: forwards;
 }
 
+.blur-shadow {
+  --glow-rgb: 239 42 201;
+  position: absolute;
+  pointer-events: none;
+  animation-fill-mode: forwards;
+  box-shadow: 0rem 0rem 1.2rem 0.6rem rgb(var(--glow-rgb));
+}
+
 @keyframes star-fall-1 {
   0% {
     transform: translate(0px, 0px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(0.25);
